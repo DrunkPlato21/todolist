@@ -45,7 +45,7 @@ function addTodo(event){
 
     
  //make sure input isn't blank
- if (todoInput.value !== "") {
+ if (todoInput.value !== "" && todoInput.value !== null) {
          //APPEND TO LIST
 
     todoList.appendChild(todoDiv);
@@ -68,4 +68,14 @@ function deleteCheck(e){
         const todo = item.parentElement;
         todo.remove();
     }    
+
+
+// CHECK MARK
+
+if(item.classList[0] === "complete-btn") {
+    const todo = item.parentElement;
+    todo.classList.toggle("completed")
 }
+}
+
+
